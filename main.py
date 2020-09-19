@@ -20,7 +20,7 @@ def results():
     process = subprocess.Popen('python3 kompass.py', shell=True)
     process.wait()
 
-    return render_template('result.html')
+    return render_template('home.html')
 
 
 
