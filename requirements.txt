@@ -4,3 +4,4 @@ Werkzeug
 gunicorn
 Pandas
 gspread
+numpy
