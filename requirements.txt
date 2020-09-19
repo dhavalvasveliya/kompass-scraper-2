@@ -1,0 +1,6 @@
+Scrapy
+Flask
+Werkzeug
+gunicorn
+Pandas
+gspread
