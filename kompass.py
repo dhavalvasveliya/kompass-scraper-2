@@ -52,7 +52,10 @@ class KompassSpider(scrapy.Spider):
       company_activity = response.css('.company-activities::text').getall()[0].strip()
     except:
       company_activity = response.css('.company-activities::text').getall()
-    year = df[0].values[1][1]
+    try:  
+      year = df[0].values[1][1]
+    except:
+      year = "Not Available"
     company_url = response.url
     address1 = response.css('.blockAddress > span.spRight >span::text').getall()
     address1 = list(map(str.strip, address1))
@@ -60,7 +63,10 @@ class KompassSpider(scrapy.Spider):
     address2 = response.css('.blockAddress > span.spRight::text').getall()[-2].strip()
     address = str(address1) + ',' + str(address2)
     code = response.css('.blockAddress > span.spRight::text').getall()[-2].strip()[0:4]
-    siren = df[0].values[5][1]
+    try:
+      siren = df[0].values[5][1]
+    except:
+      siren = "Not Available" 
     try:
       workforce = df[0].values[8][1] 
     except:
