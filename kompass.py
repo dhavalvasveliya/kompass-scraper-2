@@ -61,7 +61,10 @@ class KompassSpider(scrapy.Spider):
     address = str(address1) + ',' + str(address2)
     code = response.css('.blockAddress > span.spRight::text').getall()[-2].strip()[0:4]
     siren = df[0].values[5][1]
-    workforce = df[0].values[8][1]    
+    try:
+      workforce = df[0].values[8][1] 
+    except:
+      workforce = df[0].values[-2][1]   
 
     managers = response.css('.executiveName::text').getall()
     managers = list(map(str.strip, managers))
