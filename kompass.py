@@ -12,9 +12,9 @@ s['DOWNLOAD_DELAY'] = '10'
 s['USER_AGENT'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
 
 gc = gspread.service_account(filename='creds.json')
-sh = gc.open('kompass').get_worksheet(0)
+sh = gc.open('kompass-final').get_worksheet(0)
 sh.clear()
-sh2 = gc.open('kompass').get_worksheet(1)
+sh2 = gc.open('kompass-final').get_worksheet(1)
 header = ['Company','Company-Activity','Address','Code','URL','Year of Creation','SIREN','Workforce at Address','Managers']
 sh.append_row(header,1)
 urlvalue = sh2.acell('A2').value
